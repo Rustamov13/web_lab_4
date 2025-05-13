@@ -1,157 +1,115 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .sidebar {
-    background-color: #2a2a2a;
-    color: white;
-    width: 25%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .sidebar h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar .contact p {
-    margin: 5px 0;
-  }
-  
-  .sidebar .section {
-    margin-top: 20px;
-  }
-  
-  .sidebar .section hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  
-  .main {
-    background-color: white;
-    width: 75%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  h1 {
-    font-size: 36px;
-    color: #000000;
-  }
-  
-  .highlight {
-    color: #000000;
-  }
-  
-  h3 {
-    color: #000000;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
-  .section p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .skill-bar {
-    height: 20px;
-    background-color: #3498db;
-    margin-bottom: 10px;
-    width: 0;
-    transition: width 2s ease-in-out;
-  }
-  
-  .skill-bar[data-level="100"] {
-    background-color: #2ecc71;
-  }
-  
-  .skill-bar[data-level="75"] {
-    background-color: #f39c12;
-  }
-  
-  .skill-bar[data-level="50"] {
-    background-color: #e67e22;
-  }
-  
-  .skill-bar[data-level="25"] {
-    background-color: #e74c3c;
-  }
-  
-  /* Etkileşimler */
-  .collapsed {
-    display: none;
-  }
-  
-  .visible {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #2a2a2a;
+  color: #fff;
+  width: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar img.daire {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.main {
+  background-color: #fff;
+  width: 75%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#name {
+  font-size: 36px;
+  font-family: 'Georgia', serif;
+  color: #000;
+  margin: 0 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#name .char {
+  display: inline-block;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
     opacity: 1;
-    transition: opacity 1s ease-in;
   }
-  
-  button {
-    background-color: #3498db;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
+}
+
+h3 {
+  margin: 0 0 20px;
+  color: #000000;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: inherit;
+}
+
+.content p {
+  line-height: 1.5;
+}
+
+button.save-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.save-btn:hover {
+  background-color: #2980b9;
+}
+
+button.edit-btn {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button.add-btn {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+button.edit-btn:hover  { background-color: #f39c12; }
+button.add-btn:hover   { background-color: #27ae60; }
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
   }
-  
-  button:hover {
-    background-color: #2980b9;
+  .sidebar, .main {
+    width: 100%;
   }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  .edit-edu, .edit-lang, .edit-we, .edit-ref {
-    background-color: #e67e22;
-  }
-  
-  .edit-edu:hover, .edit-lang:hover, .edit-we:hover, .edit-ref:hover {
-    background-color: #f39c12;
-  }
-  
-  #addEdu, #addLang, #addWE, #addRef {
-    background-color: #2ecc71;
-  }
-  
-  #addEdu:hover, #addLang:hover, #addWE:hover, #addRef:hover {
-    background-color: #27ae60;
-  }
-  
-  /* Responsivlik */
-  @media (max-width: 768px) {
-    body {
-      flex-direction: column;
-    }
-  
-    .sidebar {
-      width: 100%;
-    }
-  
-    .main {
-      width: 100%;
-    }
-  }
+}
